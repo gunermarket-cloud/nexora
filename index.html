@@ -287,6 +287,10 @@ body.auth-mode .auth-card{position:relative;z-index:3;width:min(100%,800px);max-
  </aside>
 </div>
 <footer class="footer">NEXORA © 2026 · ONE WORLD. ONE CONNECTION. · <span data-t="footer">İlk prototip</span></footer>
+<script>
+/* Render the login landing page before any external auth library loads. */
+(()=>{const landing=document.getElementById("authLanding");const slot=document.getElementById("authSlot");const auth=document.getElementById("authBox");if(landing&&slot&&auth){slot.appendChild(auth);auth.style.cssText="padding:0;margin:0;border:0;background:transparent;box-shadow:none";document.body.classList.add("auth-mode");landing.style.display="grid";}})();
+</script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 const SUPABASE_URL="https://wfaprqgpvlbzaprjgwjd.supabase.co";
