@@ -41,17 +41,18 @@ body.auth-mode{margin:0;min-height:100%;overflow-x:hidden;overflow-y:auto}body.a
 </style></head>
 <body>
 <section class="auth-landing" id="authLanding">
- <div class="auth-copy">
-  <div class="auth-brand"><span class="mark">N</span><span>NEXORA</span></div>
-  <h1>NEXORA</h1>
-  <p>ONE WORLD · ONE CONNECTION</p>
+ <div class="auth-world"><div class="world-globe"><div class="world-grid"></div></div><div class="world-orbit"></div></div>
+ <div class="auth-brand-block">
+  <div class="auth-logo">N</div><div class="auth-wordmark">NEXORA</div>
+  <div class="auth-worldline">ONE WORLD · ONE CONNECTION</div>
   <div class="auth-tagline">Dünyanın dört bir yanından insanlarla<br>tek bir yerde buluş.</div>
  </div>
  <div class="auth-card">
-  <h2>Hoş Geldin</h2><p class="auth-sub">NEXORA'ya giriş yap, dünyayla bağlantını kur.</p>
+  <div class="auth-card-emblem">♟</div><h2>Hoş Geldin</h2>
+  <p class="auth-sub">NEXORA'ya giriş yap, dünyayla bağlantını kur.</p>
   <div id="authSlot"></div>
  </div>
-</section>
+</section>>
 
 <header class="top"><div class="topin">
  <div class="brand"><div class="mark">N</div><div class="brandname">NEXORA</div></div>
@@ -225,4 +226,40 @@ body.auth-mode .auth-actions .btn{padding:11px}
 }
 .feed-search{margin:0 0 14px}
 .feed-search .search{display:block;width:100%;max-width:none;border-radius:12px;padding:12px 15px}
+</style>
+
+<style>
+
+/* Reference-inspired NEXORA login */
+body.auth-mode{background:#001108!important;overflow-x:hidden}
+body.auth-mode #authLanding{display:flex!important;flex-direction:column;align-items:center;justify-content:flex-start;gap:0;min-height:100dvh;padding:0 12px 24px;overflow-y:auto;background:radial-gradient(ellipse at 50% 14%,#06452a 0,transparent 54%),#001108}
+.auth-world{position:relative;width:min(100%,900px);height:clamp(190px,34vh,360px);flex:none;overflow:hidden}
+.world-globe{position:absolute;left:50%;top:8px;transform:translateX(-50%);width:100%;height:100%;border:2px solid #00f3a2;border-radius:50% 50% 45% 45%;background:radial-gradient(ellipse at 50% 100%,#064126,#02150b 68%);box-shadow:0 0 14px #00f6a7,0 0 38px #00c982,inset 0 0 32px #00e58a66;overflow:hidden}
+.world-globe:before{content:"";position:absolute;inset:0;background:repeating-radial-gradient(ellipse,transparent 0 25px,#00f1a044 26px 27px,transparent 28px 48px),repeating-linear-gradient(12deg,transparent 0 24px,#d8b64b55 25px 26px,transparent 27px 42px);mask-image:radial-gradient(ellipse,#000 0 60%,transparent 80%)}
+.world-globe:after{content:"";position:absolute;inset:8%;border-radius:50%;border-top:2px solid #ffdf61;box-shadow:0 -8px 20px #ffe66a66,inset 0 0 25px #00ed9b55}
+.world-grid{position:absolute;left:50%;top:4%;width:48%;height:4px;transform:translateX(-50%);background:#fff6a5;box-shadow:0 0 12px 5px #00ffa9,0 0 35px 14px #00d98d}
+.world-orbit{position:absolute;inset:5% -10%;border:1px solid #00ef9a66;border-radius:50%;transform:rotate(-9deg);pointer-events:none}
+.auth-brand-block{position:relative;z-index:2;text-align:center;width:100%;margin-top:-54px}
+.auth-logo{width:78px;height:78px;margin:auto auto 7px;border:4px solid #f6dc71;border-radius:20px;background:linear-gradient(145deg,#27300d,#030d06);display:grid;place-items:center;color:#ffe88a;font-size:66px;font-weight:950;text-shadow:0 0 12px #ffe45c;box-shadow:0 0 14px #ffe36a,0 0 32px #d9a92b}
+.auth-wordmark{font-size:clamp(42px,9vw,76px);font-weight:950;letter-spacing:7px;line-height:1;color:#ffe070;text-shadow:0 0 10px #ffe66a,0 0 25px #d6a52b}
+.auth-worldline{color:#ffe17b;font-weight:900;letter-spacing:clamp(2px,1vw,6px);font-size:clamp(11px,2.7vw,19px);margin-top:7px}
+.auth-tagline{font:italic clamp(16px,3.8vw,24px)/1.4 Georgia,serif;color:#fff;margin:13px auto 20px}
+body.auth-mode .auth-card{position:relative;width:min(100%,800px);max-width:800px;margin:0 auto;padding:32px clamp(16px,5vw,44px) 22px;border:3px solid #f4d45d;border-radius:30px;background:linear-gradient(150deg,#04321b,#00160b);box-shadow:0 0 12px #ffe36a,0 0 32px #00dc8a66,inset 0 0 24px #00dc8a22}
+.auth-card:before{content:"";position:absolute;inset:5px;border:1px solid #00e98c;border-radius:24px;pointer-events:none;box-shadow:inset 0 0 14px #00e98c55}
+.auth-card-emblem{position:absolute;top:-34px;left:50%;transform:translateX(-50%);width:70px;height:70px;border:4px solid #f6d64f;border-radius:50%;display:grid;place-items:center;background:#092412;color:#ffe46b;font-size:32px;box-shadow:0 0 15px #ffe36a}
+.auth-card h2{text-align:center;font-size:clamp(26px,5vw,38px);margin:19px 0 0;color:white}
+.auth-card .auth-sub{text-align:center;color:#cbd4ce;font-size:clamp(13px,3vw,18px);margin:0 auto 20px}
+#authHeading,#authSub,.auth-tabs{display:none!important}
+.auth-fields{display:grid;gap:13px}
+.auth-fields input{height:58px;width:100%;background:#00170b!important;border:2px solid #00d875!important;border-radius:17px!important;color:white!important;padding:0 18px!important;font-size:clamp(15px,3.7vw,21px)!important;box-shadow:0 0 10px #00d87555,inset 0 0 12px #00d87512}
+.auth-fields input::placeholder{color:#d2ddd5}
+.auth-actions{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:16px}
+.auth-actions .btn{grid-column:1/-1;min-height:62px;border:2px solid #fff0a1;border-radius:17px;background:linear-gradient(#ffe65d,#e9a900);color:#101408;font-size:clamp(18px,4vw,25px);font-weight:900;box-shadow:0 0 14px #ffdf45}
+#signUp{display:none!important}
+#googleSignIn{grid-column:1;min-height:54px;border-radius:30px;background:#fff;color:#151515;border:1px solid #eee;font-size:13px}
+#googleSignIn:before{content:"G";font-size:25px;font-weight:900;color:#4285f4;margin-right:7px}
+#forgotPassword{grid-column:2;color:#f6d65f;text-align:right;font-size:14px}
+#authStatus{grid-column:1/-1;color:#b6d5c1}
+@media(max-width:600px){.auth-world{height:clamp(175px,29vh,270px)}.auth-brand-block{margin-top:-45px}.auth-logo{width:66px;height:66px;font-size:55px}.auth-wordmark{font-size:clamp(40px,10vw,58px);letter-spacing:5px}.auth-worldline{letter-spacing:2px}.auth-tagline{font-size:17px;margin:9px auto 14px}body.auth-mode .auth-card{padding:27px 14px 18px;border-radius:24px}.auth-card-emblem{width:60px;height:60px;top:-29px}.auth-fields input{height:52px}.auth-actions .btn{min-height:56px}#googleSignIn{font-size:11px;padding:8px 4px}}
+
 </style>
