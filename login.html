@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#001008"><title>NEXORA — Giriş</title>
+<style>
+:root{color-scheme:dark;--gold:#f4d45d;--green:#00df72}*{box-sizing:border-box}
+body{margin:0;min-height:100svh;background:radial-gradient(ellipse at 50% 18%,#07532f 0,#002012 43%,#000b05 100%);color:#fff;font:16px/1.5 system-ui,Arial;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-radial-gradient(ellipse at 50% 115%,transparent 0 35px,#00ff8b13 37px 39px,transparent 41px 70px)}
+main{position:relative;width:min(100% - 28px,760px);margin:auto;padding:20px 0 35px;text-align:center}
+.globe{height:245px;position:relative;display:grid;place-items:center;overflow:hidden}
+.planet{width:220px;height:220px;border-radius:50%;position:relative;background:radial-gradient(circle at 32% 28%,#ffe99b 0 2%,#b39b45 10%,#315b32 36%,#062b1a 68%,#001109 100%);box-shadow:inset -24px -16px 36px #000b,0 0 30px #d4b44a66,0 0 90px #00df7255}
+.planet:before{content:"";position:absolute;inset:8px;border-radius:50%;background:repeating-linear-gradient(0deg,transparent 0 23px,#f7df7944 24px 25px),repeating-linear-gradient(90deg,transparent 0 28px,#f7df7933 29px 30px);mask-image:radial-gradient(circle,#000 48%,transparent 72%)}
+.orbit{position:absolute;width:330px;height:110px;border:1px solid #f5d76a99;border-radius:50%;transform:rotate(-19deg);box-shadow:0 0 14px #e9c64b55}
+.orbit:after{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:#ffe77a;box-shadow:0 0 16px 5px #ffe77a;left:17%;top:8%}
+.brand{margin-top:-5px}.brandmark{font-size:66px;line-height:1;color:var(--gold);font-weight:900;text-shadow:0 0 25px #ffd84c99}.wordmark{font-size:clamp(42px,9vw,68px);font-weight:900;letter-spacing:7px;color:#f4d45d;text-shadow:0 0 25px #f4d45d66}.motto{letter-spacing:3px;color:#f7e8a9;font-size:13px}.tagline{font-size:19px;color:#d4e6d9;margin:13px 0 24px}
+.card{position:relative;text-align:left;padding:48px clamp(18px,5vw,42px) 24px;border:2px solid var(--gold);border-radius:28px;background:linear-gradient(145deg,#002b18f5,#001208f7);box-shadow:0 0 12px #ffe45d,0 0 34px #00df7955,inset 0 0 22px #00e87822}
+.emblem{position:absolute;top:-34px;left:50%;transform:translateX(-50%);width:72px;height:72px;border:3px solid var(--gold);border-radius:50%;display:grid;place-items:center;background:#062516;color:var(--gold);font-size:32px;box-shadow:0 0 18px #ffd943}
+h1{text-align:center;font-size:32px;margin:0}.sub{text-align:center;color:#cbd8cf;margin:3px 0 22px}
+.field{height:60px;display:flex;align-items:center;gap:12px;padding:0 14px;margin:13px 0;border:2px solid #08d66d;border-radius:17px;background:#042819;box-shadow:0 0 12px #00e87822}
+.field b{color:var(--gold);font-size:23px}.field input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:#fff;font-size:17px}.field input::placeholder{color:#c1d0c6}
+.eye{border:0;background:none;color:#fff;font-size:20px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:14px 0 20px;font-size:14px}.row label{display:flex;align-items:center;gap:8px}.row input{accent-color:#f4d45d;width:18px;height:18px}
+a,.link{color:#ffdf60;text-decoration:none;font-weight:700;background:none;border:0;cursor:pointer;font:inherit}
+.primary{width:100%;height:66px;border:2px solid #fff1a2;border-radius:19px;background:linear-gradient(#ffe86b,#ffb900 70%,#d68a00);color:#11170a;font-size:22px;font-weight:900;box-shadow:0 0 18px #ffdb39,0 5px 0 #815000;cursor:pointer}
+.divider{display:flex;align-items:center;gap:15px;color:#d7ded9;margin:18px 0}.divider:before,.divider:after{content:"";height:1px;flex:1;background:#bca35488}
+.social{display:grid;grid-template-columns:1fr 1fr;gap:12px}.social button{height:55px;border-radius:30px;font-weight:800;cursor:pointer}.google{background:#fff;color:#171717;border:1px solid #ddd}.github{background:#002014;color:#fff;border:1px solid #56b47c}
+.status{text-align:center;min-height:24px;color:#d8e7dc;font-size:13px;margin:13px 0 0}.register{margin:20px 0 0;border:1px solid #56df77;border-radius:50px;padding:15px 20px;display:flex;align-items:center;gap:14px;background:#002313b8}.register .symbol{font-size:30px;color:#50ed70}.register button{display:flex;flex-direction:column;text-align:left;color:#fff}.register strong{color:#50ed70}.register .arrow{margin-left:auto;font-size:30px}
+@media(max-width:480px){main{padding-top:8px}.globe{height:205px}.planet{width:185px;height:185px}.orbit{width:290px}.brandmark{font-size:52px}.wordmark{letter-spacing:4px}.tagline{font-size:15px;margin-bottom:22px}.card{padding:44px 14px 18px;border-radius:23px}h1{font-size:27px}.field{height:54px}.field input{font-size:15px}.primary{height:59px}.social{gap:8px}.social button{font-size:12px}.register{padding:12px 15px}}
+</style></head>
+<body><main>
+<div class="globe" aria-hidden="true"><div class="planet"></div><div class="orbit"></div></div>
+<header class="brand"><div class="brandmark">N</div><div class="wordmark">NEXORA</div><div class="motto">ONE WORLD · ONE CONNECTION</div><p class="tagline">Dünyanın dört bir yanından insanlarla<br>tek bir yerde buluş.</p></header>
+<section class="card"><div class="emblem">♟</div><h1 id="heading">Hoş Geldin</h1><p class="sub" id="sub">NEXORA'ya giriş yap, dünyayla bağlantını kur.</p>
+<form id="form">
+<label class="field"><b>✉</b><input id="email" type="email" placeholder="E-posta adresin" autocomplete="email" required></label>
+<label class="field"><b>♙</b><input id="password" type="password" placeholder="Şifren" autocomplete="current-password" required><button class="eye" id="eye" type="button" aria-label="Şifreyi göster">◉</button></label>
+<div id="extra" hidden><label class="field"><b>♙</b><input id="name" placeholder="Adın" autocomplete="name"></label><label class="field"><b>♙</b><input id="confirm" type="password" placeholder="Şifreyi tekrar yaz" autocomplete="new-password"></label></div>
+<div class="row"><label><input type="checkbox" checked> Beni hatırla</label><button class="link" id="forgot" type="button">Şifremi Unuttum?</button></div>
+<button class="primary" id="submit" type="submit">➜ &nbsp; Giriş Yap</button>
+</form>
+<div class="divider">veya</div><div class="social"><button class="google" id="google">G Google ile Giriş</button><button class="github" id="github">● GitHub ile Giriş</button></div>
+<p class="status" id="status" role="status">Giriş yap veya ücretsiz hesap oluştur.</p>
+<div class="register"><span class="symbol">♟＋</span><button class="link" id="switch"><span>Henüz hesabın yok mu?</span><strong>Hemen kayıt ol</strong></button><span class="arrow">›</span></div>
+</section></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const URL="https://wfaprqgpvlbzaprjgwjd.supabase.co",KEY="sb_publishable_uH8WfCIuo3EuftIN969yyg_3vuO410l";
+const $=id=>document.getElementById(id),status=t=>$("status").textContent=t;
+let mode="login",db=null;
+function setMode(m){mode=m;const signup=m==="signup";$("heading").textContent=signup?"Hesabını Oluştur":"Hoş Geldin";$("sub").textContent=signup?"Ücretsiz hesabını oluştur ve NEXORA'ya katıl.":"NEXORA'ya giriş yap, dünyayla bağlantını kur.";$("extra").hidden=!signup;$("name").required=signup;$("confirm").required=signup;$("submit").textContent=signup?"Hesap Oluştur":"➜  Giriş Yap";$("switch").innerHTML=signup?"<span>Zaten hesabın var mı?</span><strong>Giriş yap</strong>":"<span>Henüz hesabın yok mu?</span><strong>Hemen kayıt ol</strong>";}
+$("switch").onclick=()=>setMode(mode==="login"?"signup");
+$("eye").onclick=()=>{$("password").type=$("password").type==="password"?"text":"password";};
+$("form").onsubmit=async e=>{e.preventDefault();if(!db){status("Giriş servisi yüklenemedi. Sayfayı yenile.");return;}const email=$("email").value.trim(),password=$("password").value;if(mode==="signup"){if(password.length<6){status("Şifre en az 6 karakter olmalı.");return;}if(password!==$("confirm").value){status("Şifreler eşleşmiyor.");return;}status("Hesap oluşturuluyor…");const name=$("name").value.trim()||email.split("@")[0];const {data,error}=await db.auth.signUp({email,password,options:{data:{display_name:name,username:name.toLowerCase().replace(/[^a-z0-9_]/g,"").slice(0,24)}}});if(error){status(error.message);return;}status(data.session?"Hesabın oluşturuldu. Ana sayfaya geçiliyor…":"Kayıt alındı. E-postana gelen doğrulama bağlantısını aç.");if(data.session)setTimeout(()=>location.href="index.html",700);}else{status("Giriş yapılıyor…");const {error}=await db.auth.signInWithPassword({email,password});if(error){status(error.message);return;}status("Giriş başarılı. Yönlendiriliyorsun…");location.href="index.html";}};
+$("forgot").onclick=async()=>{const email=$("email").value.trim();if(!email){status("Önce e-posta adresini yaz.");$("email").focus();return;}if(!db){status("Giriş servisi yüklenemedi.");return;}const {error}=await db.auth.resetPasswordForEmail(email,{redirectTo:location.origin+"/login.html"});status(error?error.message:"Şifre sıfırlama bağlantısı e-postana gönderildi.");};
+async function oauth(provider){if(!db){status("Giriş servisi yüklenemedi.");return;}const {error}=await db.auth.signInWithOAuth({provider,options:{redirectTo:location.origin+"/index.html"}});if(error)status(error.message);}
+$("google").onclick=()=>oauth("google");$("github").onclick=()=>oauth("github");
+(async()=>{try{if(!window.supabase)throw Error("Supabase SDK yüklenemedi");db=window.supabase.createClient(URL,KEY);const {data}=await db.auth.getSession();if(data.session)location.href="index.html";}catch(e){status(e.message);}})();
+</script></body></html>
