@@ -45,15 +45,67 @@ a,.link{color:#ffdf60;text-decoration:none;font-weight:700;background:none;borde
 </section></main>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-const URL="https://wfaprqgpvlbzaprjgwjd.supabase.co",KEY="sb_publishable_uH8WfCIuo3EuftIN969yyg_3vuO410l";
-const $=id=>document.getElementById(id),status=t=>$("status").textContent=t;
+(()=> {
+"use strict";
+const SUPABASE_URL="https://wfaprqgpvlbzaprjgwjd.supabase.co";
+const SUPABASE_KEY="sb_publishable_uH8WfCIuo3EuftIN969yyg_3vuO410l";
+const $=id=>document.getElementById(id);
+const showStatus=t=>{$("status").textContent=t;};
 let mode="login",db=null;
-function setMode(m){mode=m;const signup=m==="signup";$("heading").textContent=signup?"Hesabını Oluştur":"Hoş Geldin";$("sub").textContent=signup?"Ücretsiz hesabını oluştur ve NEXORA'ya katıl.":"NEXORA'ya giriş yap, dünyayla bağlantını kur.";$("extra").hidden=!signup;$("name").required=signup;$("confirm").required=signup;$("submit").textContent=signup?"Hesap Oluştur":"➜  Giriş Yap";$("switch").innerHTML=signup?"<span>Zaten hesabın var mı?</span><strong>Giriş yap</strong>":"<span>Henüz hesabın yok mu?</span><strong>Hemen kayıt ol</strong>";}
-$("switch").onclick=()=>setMode(mode==="login"?"signup");
-$("eye").onclick=()=>{$("password").type=$("password").type==="password"?"text":"password";};
-$("form").onsubmit=async e=>{e.preventDefault();if(!db){status("Giriş servisi yüklenemedi. Sayfayı yenile.");return;}const email=$("email").value.trim(),password=$("password").value;if(mode==="signup"){if(password.length<6){status("Şifre en az 6 karakter olmalı.");return;}if(password!==$("confirm").value){status("Şifreler eşleşmiyor.");return;}status("Hesap oluşturuluyor…");const name=$("name").value.trim()||email.split("@")[0];const {data,error}=await db.auth.signUp({email,password,options:{data:{display_name:name,username:name.toLowerCase().replace(/[^a-z0-9_]/g,"").slice(0,24)}}});if(error){status(error.message);return;}status(data.session?"Hesabın oluşturuldu. Ana sayfaya geçiliyor…":"Kayıt alındı. E-postana gelen doğrulama bağlantısını aç.");if(data.session)setTimeout(()=>location.href="index.html",700);}else{status("Giriş yapılıyor…");const {error}=await db.auth.signInWithPassword({email,password});if(error){status(error.message);return;}status("Giriş başarılı. Yönlendiriliyorsun…");location.href="index.html";}};
-$("forgot").onclick=async()=>{const email=$("email").value.trim();if(!email){status("Önce e-posta adresini yaz.");$("email").focus();return;}if(!db){status("Giriş servisi yüklenemedi.");return;}const {error}=await db.auth.resetPasswordForEmail(email,{redirectTo:location.origin+"/login.html"});status(error?error.message:"Şifre sıfırlama bağlantısı e-postana gönderildi.");};
-async function oauth(provider){if(!db){status("Giriş servisi yüklenemedi.");return;}const {error}=await db.auth.signInWithOAuth({provider,options:{redirectTo:location.origin+"/index.html"}});if(error)status(error.message);}
-$("google").onclick=()=>oauth("google");$("github").onclick=()=>oauth("github");
-(async()=>{try{if(!window.supabase)throw Error("Supabase SDK yüklenemedi");db=window.supabase.createClient(URL,KEY);const {data}=await db.auth.getSession();if(data.session)location.href="index.html";}catch(e){status(e.message);}})();
+function setMode(m){
+ mode=m;
+ const signup=m==="signup";
+ $("heading").textContent=signup?"Hesabını Oluştur":"Hoş Geldin";
+ $("sub").textContent=signup?"Ücretsiz hesabını oluştur ve NEXORA'ya katıl.":"NEXORA'ya giriş yap, dünyayla bağlantını kur.";
+ $("extra").hidden=!signup;
+ $("name").required=signup;
+ $("confirm").required=signup;
+ $("submit").textContent=signup?"Hesap Oluştur":"➜  Giriş Yap";
+ $("switch").innerHTML=signup?"<span>Zaten hesabın var mı?</span><strong>Giriş yap</strong>":"<span>Henüz hesabın yok mu?</span><strong>Hemen kayıt ol</strong>";
+}
+$("switch").addEventListener("click",()=>setMode(mode==="login"?"signup":"login"));
+$("eye").addEventListener("click",()=>{$("password").type=$("password").type==="password"?"text":"password";});
+$("form").addEventListener("submit",async e=>{
+ e.preventDefault();
+ if(!db){showStatus("Giriş servisi yüklenemedi. Sayfayı yenile.");return;}
+ const email=$("email").value.trim(),password=$("password").value;
+ try{
+  if(mode==="signup"){
+   if(password.length<6){showStatus("Şifre en az 6 karakter olmalı.");return;}
+   if(password!==$("confirm").value){showStatus("Şifreler eşleşmiyor.");return;}
+   showStatus("Hesap oluşturuluyor…");
+   const name=$("name").value.trim()||email.split("@")[0];
+   const {data,error}=await db.auth.signUp({email,password,options:{data:{display_name:name,username:name.toLowerCase().replace(/[^a-z0-9_]/g,"").slice(0,24)}}});
+   if(error){showStatus(error.message);return;}
+   showStatus(data.session?"Hesabın oluşturuldu. Ana sayfaya geçiliyor…":"Kayıt alındı. E-postana gelen doğrulama bağlantısını aç.");
+   if(data.session)setTimeout(()=>location.href="index.html",700);
+  }else{
+   showStatus("Giriş yapılıyor…");
+   const {error}=await db.auth.signInWithPassword({email,password});
+   if(error){showStatus(error.message);return;}
+   showStatus("Giriş başarılı. Yönlendiriliyorsun…");
+   location.href="index.html";
+  }
+ }catch(err){showStatus(err.message||"Bir hata oluştu.");}
+});
+$("forgot").addEventListener("click",async()=>{
+ const email=$("email").value.trim();
+ if(!email){showStatus("Önce e-posta adresini yaz.");$("email").focus();return;}
+ if(!db){showStatus("Giriş servisi yüklenemedi.");return;}
+ try{const {error}=await db.auth.resetPasswordForEmail(email,{redirectTo:location.origin+"/login.html"});showStatus(error?error.message:"Şifre sıfırlama bağlantısı e-postana gönderildi.");}
+ catch(err){showStatus(err.message||"Bir hata oluştu.");}
+});
+async function oauth(provider){
+ if(!db){showStatus("Giriş servisi yüklenemedi.");return;}
+ try{const {error}=await db.auth.signInWithOAuth({provider,options:{redirectTo:location.origin+"/index.html"}});if(error)showStatus(error.message);}
+ catch(err){showStatus(err.message||"Giriş başlatılamadı.");}
+}
+$("google").addEventListener("click",()=>oauth("google"));
+$("github").addEventListener("click",()=>oauth("github"));
+try{
+ if(!window.supabase)throw new Error("Giriş kütüphanesi yüklenemedi. İnternet bağlantısını kontrol et.");
+ db=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+ db.auth.getSession().then(({data})=>{if(data.session)location.href="index.html";}).catch(err=>showStatus(err.message));
+}catch(err){showStatus(err.message||"Giriş servisi başlatılamadı.");}
+})();
 </script></body></html>
