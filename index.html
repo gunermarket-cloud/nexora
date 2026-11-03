@@ -252,7 +252,86 @@ body.auth-mode .auth-card{position:relative;z-index:3;width:min(100%,800px);max-
 @media(max-width:600px){body.auth-mode #authLanding{padding-left:9px;padding-right:9px}.auth-world{height:clamp(175px,29vh,260px)}.auth-brand-block{margin-top:-47px}.auth-logo{width:66px;height:66px;font-size:55px}.auth-wordmark{font-size:clamp(40px,10vw,58px);letter-spacing:5px}.auth-worldline{letter-spacing:2px}.auth-tagline{font-size:17px;margin:9px auto 14px}body.auth-mode .auth-card{padding:27px 14px 18px;border-radius:24px}.auth-card-emblem{width:60px;height:60px;top:-29px}.auth-fields{gap:10px}.auth-fields input{height:52px}.auth-actions .btn{min-height:56px}#googleSignIn,#githubSignIn{font-size:11px;padding:7px 3px}}
 
 
-</style></head>
+</style><style>
+/* Screenshot-matched NEXORA sign-in screen */
+body.auth-mode{background:#001008!important;color:#fff!important;overflow-x:hidden}
+body.auth-mode #authLanding{display:flex!important;position:relative!important;inset:auto!important;width:100%!important;max-width:900px!important;height:auto!important;min-height:100svh!important;max-height:none!important;margin:0 auto!important;padding:12px 22px 34px!important;overflow:visible!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;gap:0!important}
+body.auth-mode .auth-world{height:clamp(210px,34vw,340px);width:min(100vw,900px)}
+body.auth-mode .auth-brand-block{padding-top:clamp(160px,25vw,230px);margin:0 0 18px}
+body.auth-mode .auth-logo{width:84px;height:84px;font-size:70px;margin-bottom:8px}
+body.auth-mode .auth-wordmark{font-size:clamp(42px,8vw,72px);letter-spacing:5px}
+body.auth-mode .auth-worldline{font-size:clamp(11px,2vw,17px);letter-spacing:3px}
+body.auth-mode .auth-tagline{font-size:clamp(16px,3vw,23px);margin-top:12px}
+body.auth-mode .auth-card{width:min(100%,800px);max-width:800px;margin:26px auto 0;padding:62px clamp(18px,5vw,42px) 22px;border:3px solid #f6d94c;border-radius:30px;background:linear-gradient(145deg,#002512f5,#001208f7);box-shadow:0 0 12px #ffe45d,0 0 30px #00df7955,inset 0 0 22px #00e87822;overflow:visible;max-height:none}
+body.auth-mode .auth-card-emblem{position:absolute;top:-32px;left:50%;transform:translateX(-50%);width:82px;height:82px;border:4px solid #ffe15c;border-radius:50%;display:grid;place-items:center;background:#062516;color:#ffe45d;font-size:37px;box-shadow:0 0 17px #ffd943}
+body.auth-mode .auth-card h2{font-size:clamp(29px,5vw,42px);margin:0;text-align:center}
+body.auth-mode .auth-card .auth-sub{font-size:clamp(14px,2.5vw,20px);margin:0 0 20px;text-align:center;color:#cbd5ce}
+body.auth-mode .auth-tabs{display:none!important}
+body.auth-mode .auth-fields{display:grid;gap:14px}
+body.auth-mode .auth-fields input{height:58px;padding:13px 18px!important;border:0!important;background:transparent!important;box-shadow:none!important;color:#fff!important;font-size:clamp(16px,2.6vw,21px)!important;min-width:0!important;width:100%;outline:none}
+.auth-input-wrap{height:62px;display:flex;align-items:center;gap:14px;padding:0 17px;border:2px solid #08d66d;border-radius:20px;background:linear-gradient(90deg,#042819,#00160c);box-shadow:0 0 12px #00e87833}
+.auth-input-wrap:focus-within{border-color:#ffe16a;box-shadow:0 0 15px #00e87855}
+.field-icon{font-size:29px;color:#ffdf65;min-width:38px;text-align:center;text-shadow:0 0 8px #ffda48}
+.field-valid{font-size:24px;color:#001b0d;background:#1bfa62;border-radius:50%;width:31px;height:31px;display:grid;place-items:center;font-weight:900}
+.password-toggle{border:0;background:none;color:#ddd;font-size:23px;padding:5px}
+body.auth-mode .auth-remember-row{display:flex;align-items:center;justify-content:space-between;margin:16px 3px 20px;font-size:16px}
+body.auth-mode .auth-remember-row label{display:flex;align-items:center;gap:10px}
+body.auth-mode .auth-remember-row input{width:23px;height:23px;accent-color:#ffd54d}
+body.auth-mode .auth-remember-row .act{display:block!important;color:#ffdf60;background:none;border:0;font-weight:700}
+body.auth-mode .auth-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+body.auth-mode .auth-actions .btn{grid-column:1/-1;min-height:76px;border:2px solid #fff1a2;border-radius:22px;background:linear-gradient(180deg,#ffe86b,#ffb900 70%,#d68a00);color:#101508;font-size:clamp(19px,3vw,25px);font-weight:900;box-shadow:0 0 17px #ffdb39,0 5px 0 #815000}
+body.auth-mode .auth-actions .btn[hidden]{display:none!important}
+.auth-divider{grid-column:1/-1;display:flex;align-items:center;gap:18px;color:#ddd;font-size:17px;justify-content:center;margin:4px 0}
+.auth-divider:before,.auth-divider:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#d4af57)}
+body.auth-mode .auth-actions .google-login,body.auth-mode .auth-actions .github-login{grid-column:auto;min-height:64px;display:flex;align-items:center;justify-content:center;gap:10px;border-radius:40px;padding:12px 8px;font-size:clamp(13px,2vw,17px);font-weight:800}
+body.auth-mode .auth-actions .google-login{background:#fff;color:#171717;border:1px solid #ddd}
+body.auth-mode .auth-actions .github-login{background:#002014;color:#fff;border:1px solid #56b47c}
+.github-mark{font-size:30px;line-height:1;color:#fff}
+body.auth-mode .auth-status{grid-column:1/-1;color:#d8e7dc;min-height:20px;text-align:center}
+.auth-register-cta{margin:23px auto 0;width:100%;min-height:92px;border:1px solid #56df77;border-radius:55px;background:#002313b8;display:flex;align-items:center;gap:20px;padding:12px 24px;box-shadow:0 0 15px #00e87822}
+.register-icon{font-size:37px;color:#45ef72}
+.auth-register-cta .auth-tab{display:flex!important;flex-direction:column;align-items:flex-start;gap:0;border:0;background:none;color:#fff;padding:4px;font-size:17px}
+.auth-register-cta .auth-tab strong{color:#50ed70;font-size:20px}
+.register-arrow{margin-left:auto;font-size:38px;color:#fff}
+#passwordUpdateBox{width:100%}#passwordUpdateBox[hidden]{display:none!important}
+@media(max-width:600px){
+ body.auth-mode #authLanding{padding:6px 10px 22px!important;min-height:100svh!important}
+ body.auth-mode .auth-world{height:220px}
+ body.auth-mode .auth-brand-block{padding-top:148px;margin-bottom:10px}
+ body.auth-mode .auth-logo{width:67px;height:67px;font-size:56px;border-radius:17px}
+ body.auth-mode .auth-wordmark{font-size:clamp(38px,10vw,56px);letter-spacing:3px}
+ body.auth-mode .auth-worldline{font-size:10px;letter-spacing:2px}
+ body.auth-mode .auth-tagline{font-size:15px;margin-top:7px}
+ body.auth-mode .auth-card{margin-top:24px;padding:52px 14px 17px;border-radius:23px}
+ body.auth-mode .auth-card-emblem{width:68px;height:68px;top:-27px;font-size:31px}
+ body.auth-mode .auth-card h2{font-size:clamp(25px,7vw,34px)}
+ body.auth-mode .auth-card .auth-sub{font-size:14px;margin-bottom:14px}
+ body.auth-mode .auth-fields{gap:10px}
+ .auth-input-wrap{height:56px;border-radius:17px;gap:9px;padding:0 11px}
+ .field-icon{font-size:24px;min-width:32px}
+ body.auth-mode .auth-fields input{font-size:16px!important;padding:10px 2px!important}
+ body.auth-mode .auth-remember-row{font-size:14px;margin:12px 2px 16px}
+ body.auth-mode .auth-actions .btn{min-height:62px;font-size:20px}
+ body.auth-mode .auth-actions .google-login,body.auth-mode .auth-actions .github-login{min-height:55px;font-size:12px}
+ .auth-register-cta{min-height:78px;margin-top:17px;padding:10px 16px;gap:12px}
+ .auth-register-cta .auth-tab{font-size:14px}
+ .auth-register-cta .auth-tab strong{font-size:17px}
+ .register-icon{font-size:30px}
+}
+@media(max-height:760px) and (max-width:600px){
+ body.auth-mode #authLanding{padding-top:3px!important}
+ body.auth-mode .auth-brand-block{padding-top:120px}
+ body.auth-mode .auth-world{height:185px}
+ body.auth-mode .auth-logo{width:55px;height:55px;font-size:46px}
+ body.auth-mode .auth-wordmark{font-size:36px}
+ body.auth-mode .auth-tagline{font-size:13px;margin-top:4px}
+ body.auth-mode .auth-card{margin-top:19px;padding-top:46px}
+ body.auth-mode .auth-input-wrap{height:49px}
+ body.auth-mode .auth-actions .btn{min-height:54px}
+ .auth-register-cta{min-height:66px;margin-top:12px}
+}
+</style>
+</head>
 <body>
 <section class="auth-landing" id="authLanding">
  <div class="auth-world" aria-hidden="true"><div class="world-globe"><div class="world-grid"></div><div class="world-land"></div></div><div class="world-orbit orbit-one"></div><div class="world-orbit orbit-two"></div><div class="world-light"></div></div>
@@ -277,7 +356,29 @@ body.auth-mode .auth-card{position:relative;z-index:3;width:min(100%,800px);max-
  <main class="main">
   <section class="hero panel"><div class="eyebrow">ONE WORLD · ONE CONNECTION</div><h1 data-t="welcome">NEXORA'ya hoş geldin.</h1><p data-t="tagline">Dünyanın dört bir yanından insanlarla tek bir yerde buluş.</p></section>
   <div class="feed-search"><input id="search" class="search" placeholder="Paylaşımlarda ara…" aria-label="Search"></div>
-  <section class="panel" id="authBox" style="padding:15px 17px;margin-bottom:14px"><h2 id="authHeading">Tekrar hoş geldin</h2><p class="auth-sub" id="authSub">NEXORA hesabına güvenle giriş yap.</p><div class="auth-tabs"><button type="button" class="auth-tab active" data-mode="login">Giriş yap</button><button type="button" class="auth-tab" data-mode="signup">Hesap oluştur</button></div><div class="auth-fields"><input id="displayName" placeholder="Adın" autocomplete="name" style="flex:1;min-width:130px;background:#0b2119;border:1px solid var(--line);border-radius:8px;color:var(--white);padding:10px"><input id="email" type="email" placeholder="E-posta" autocomplete="email" style="flex:1;min-width:160px;background:#0b2119;border:1px solid var(--line);border-radius:8px;color:var(--white);padding:10px"><input id="password" type="password" placeholder="Şifre (en az 6 karakter)" autocomplete="current-password" style="flex:1;min-width:150px;background:#0b2119;border:1px solid var(--line);border-radius:8px;color:var(--white);padding:10px"><input id="confirmPassword" type="password" placeholder="Şifreyi tekrar yaz" autocomplete="new-password" style="flex:1;min-width:150px;background:#0b2119;border:1px solid var(--line);border-radius:8px;color:var(--white);padding:10px"></div><div class="auth-remember-row"><label><input type="checkbox" id="rememberMe" checked> Beni hatırla</label><button class="act" id="forgotPassword">Şifremi Unuttum?</button></div><div class="auth-actions"><button class="btn" id="signIn">Giriş yap</button><button class="btn" id="signUp">Kayıt ol</button><button class="google-login" id="googleSignIn" type="button"><svg class="google-icon" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.47 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.25 5.47-4.73 7.16l7.64 5.93c4.46-4.12 7.13-10.19 7.13-17.56z"/><path fill="#FBBC05" d="M10.54 28.59A14.4 14.4 0 0 1 9.75 24c0-1.59.27-3.13.76-4.59l-7.98-6.19A23.9 23.9 0 0 0 0 24c0 3.87.93 7.55 2.56 10.78l7.98-6.19z"/><path fill="#34A853" d="M24 48c6.47 0 11.91-2.13 15.88-5.89l-7.64-5.93c-2.12 1.43-4.84 2.27-8.24 2.27-6.26 0-11.53-4.22-13.46-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google ile Giriş</button><button class="github-login" id="githubSignIn" type="button"><span class="github-mark">●</span> GitHub ile Giriş</button><button class="act" id="forgotPassword">Şifremi unuttum</button><button class="act" id="signOut" hidden>Çıkış</button><span class="hint auth-status" id="authStatus" role="status">Giriş yap veya ücretsiz hesap oluştur.</span></div><div id="passwordUpdateBox" hidden style="margin-top:12px;display:none;gap:8px;flex-wrap:wrap"><input id="newPassword" type="password" placeholder="Yeni şifre (en az 6 karakter)" autocomplete="new-password" style="flex:1;min-width:150px;background:#0b2119;border:1px solid var(--line);border-radius:8px;color:var(--white);padding:10px"><input id="newPasswordConfirm" type="password" placeholder="Yeni şifreyi tekrar yaz" autocomplete="new-password" style="flex:1;min-width:150px;background:#0b2119;border:1px solid var(--line);border-radius:8px;color:var(--white);padding:10px"><button class="btn" id="saveNewPassword">Şifreyi değiştir</button></div></section>
+  <section class="panel" id="authBox" style="padding:0;margin:0;border:0;background:transparent;box-shadow:none">
+ <h2 id="authHeading">Hoş Geldin</h2>
+ <p class="auth-sub" id="authSub">NEXORA'ya giriş yap, dünyayla bağlantını kur.</p>
+ <div class="auth-tabs"><button type="button" class="auth-tab active" data-mode="login">Giriş yap</button><button type="button" class="auth-tab" data-mode="signup">Hemen kayıt ol</button></div>
+ <div class="auth-fields">
+  <input id="displayName" placeholder="Adın" autocomplete="name" hidden>
+  <label class="auth-input-wrap"><span class="field-icon" aria-hidden="true">✉</span><input id="email" type="email" placeholder="E-posta adresin" autocomplete="email" required><span class="field-valid" aria-hidden="true">✓</span></label>
+  <label class="auth-input-wrap"><span class="field-icon" aria-hidden="true">♙</span><input id="password" type="password" placeholder="Şifren" autocomplete="current-password" required><button class="password-toggle" id="togglePassword" type="button" aria-label="Şifreyi göster">◉</button></label>
+  <input id="confirmPassword" type="password" placeholder="Şifreyi tekrar yaz" autocomplete="new-password" hidden>
+ </div>
+ <div class="auth-remember-row"><label><input type="checkbox" id="rememberMe" checked><span>Beni hatırla</span></label><button class="act" id="forgotPassword" type="button">Şifremi Unuttum?</button></div>
+ <div class="auth-actions">
+  <button class="btn" id="signIn" type="button"><span aria-hidden="true">➜</span> Giriş Yap</button>
+  <button class="btn" id="signUp" type="button" hidden>Kayıt ol</button>
+  <div class="auth-divider"><span>veya</span></div>
+  <button class="google-login" id="googleSignIn" type="button"><svg class="google-icon" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.47 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.25 5.47-4.73 7.16l7.64 5.93c4.46-4.12 7.13-10.19 7.13-17.56z"/><path fill="#FBBC05" d="M10.54 28.59A14.4 14.4 0 0 1 9.75 24c0-1.59.27-3.13.76-4.59l-7.98-6.19A23.9 23.9 0 0 0 0 24c0 3.87.93 7.55 2.56 10.78l7.98-6.19z"/><path fill="#34A853" d="M24 48c6.47 0 11.91-2.13 15.88-5.89l-7.64-5.93c-2.12 1.43-4.84 2.27-8.24 2.27-6.26 0-11.53-4.22-13.46-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google ile Giriş</button>
+  <button class="github-login" id="githubSignIn" type="button"><span class="github-mark" aria-hidden="true">●</span> GitHub ile Giriş</button>
+  <span class="hint auth-status" id="authStatus" role="status">Giriş yap veya ücretsiz hesap oluştur.</span>
+  <button class="act" id="signOut" hidden>Çıkış</button>
+ </div>
+ <div class="auth-register-cta"><span class="register-icon" aria-hidden="true">♟＋</span><button type="button" class="auth-tab" data-mode="signup"><span>Henüz hesabın yok mu?</span><strong>Hemen kayıt ol</strong></button><span class="register-arrow">›</span></div>
+ <div id="passwordUpdateBox" hidden style="margin-top:12px;display:none;gap:8px;flex-wrap:wrap"><input id="newPassword" type="password" placeholder="Yeni şifre (en az 6 karakter)" autocomplete="new-password"><input id="newPasswordConfirm" type="password" placeholder="Yeni şifreyi tekrar yaz" autocomplete="new-password"><button class="btn" id="saveNewPassword">Şifreyi değiştir</button></div>
+</section>
   <div class="disclaimer panel" data-t="demo" style="display:none">Ön izleme prototipi: Gönderiler bu cihazın tarayıcısında saklanır. Gerçek hesaplar, çevrim içi senkronizasyon ve özel mesajlar için sunucu kurulumu gerekir.</div>
   <section class="composer panel"><div class="compose"><div class="avatar">N</div><textarea id="text" maxlength="500" placeholder="Ne paylaşmak istersin?"></textarea></div><div class="composefoot"><span class="hint" id="count">0 / 500</span><button class="btn" id="publish" data-t="publish">Paylaş</button></div></section>
   <section id="feed" aria-live="polite"></section>
@@ -351,6 +452,9 @@ $("signUp").onclick=async()=>{const email=$("email").value.trim(),password=$("pa
 $("forgotPassword").onclick=async()=>{const email=$("email").value.trim();if(!email){status("Önce e-posta adresini yaz.");$("email").focus();return;}status("Şifre sıfırlama bağlantısı gönderiliyor…");const {error}=await db.auth.resetPasswordForEmail(email,{redirectTo:window.location.origin+window.location.pathname});if(error){status("Şifre sıfırlama hatası: "+error.message);return;}status("Şifre sıfırlama bağlantısı e-postana gönderildi. Bağlantıyı açınca yeni şifreni burada belirleyebilirsin.");};
 $("saveNewPassword").onclick=async()=>{const password=$("newPassword").value,confirm=$("newPasswordConfirm").value;if(password.length<6){status("Yeni şifre en az 6 karakter olmalı.");return;}if(password!==confirm){status("Yeni şifreler eşleşmiyor.");return;}const {error}=await db.auth.updateUser({password});if(error){status("Şifre değiştirilemedi: "+error.message);return;}$("passwordUpdateBox").hidden=true;$("passwordUpdateBox").style.display="none";$("newPassword").value="";$("newPasswordConfirm").value="";status("Şifren başarıyla değiştirildi.");};
 
+
+$("togglePassword").onclick=()=>{const p=$("password"),show=p.type==="password";p.type=show?"text":"password";$("togglePassword").textContent=show?"⊘":"◉";$("togglePassword").setAttribute("aria-label",show?"Şifreyi gizle":"Şifreyi göster");};
+$("githubSignIn").onclick=async()=>{status("GitHub bağlantısı açılıyor…");const {error}=await db.auth.signInWithOAuth({provider:"github",options:{redirectTo:window.location.origin+window.location.pathname}});if(error)status("GitHub girişi başlatılamadı: "+error.message+". Supabase > Authentication > Providers bölümünde GitHub sağlayıcısını etkinleştir.");};
 $("googleSignIn").onclick=async()=>{status("Google bağlantısı açılıyor…");const {error}=await db.auth.signInWithOAuth({provider:"google",options:{redirectTo:window.location.origin+window.location.pathname}});if(error){status("Google girişi başlatılamadı: "+error.message+". Supabase > Authentication > Sign In / Providers bölümünde Google sağlayıcısını etkinleştir.");}};
 $("signIn").onclick=async()=>{status("Giriş yapılıyor…");const {data,error}=await db.auth.signInWithPassword({email:$("email").value.trim(),password:$("password").value});if(error){status(error.message);return;}currentUser=data.user;setAuthUI();await loadFeed();status("Giriş başarılı.");};
 $("signOut").onclick=async()=>{await db.auth.signOut();currentUser=null;setAuthUI();await loadFeed();status("Çıkış yapıldı.");};
