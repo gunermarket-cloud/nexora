@@ -127,6 +127,10 @@ body.auth-mode .auth-card{max-height:calc(100dvh - 32px);overflow:auto;scrollbar
  body.auth-mode .auth-card{max-height:calc(100dvh - 95px);padding:10px 12px}
  body.auth-mode .auth-sub{display:none}
 }
+
+/* Fix: the registration action was hidden by older #signUp display:none rules. */
+.auth-actions #signUp:not([hidden]){display:block!important;grid-column:1/-1;width:100%;}
+.auth-actions #signUp[hidden]{display:none!important;}
 </style>
 
 <style>
